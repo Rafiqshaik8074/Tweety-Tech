@@ -993,20 +993,7 @@
                         <p>With a focus on emerging technologies and a commitment to excellence, we serve as a strategic
                             partner for businesses seeking to leverage AI, cybersecurity, data science, and specialized
                             staffing to gain competitive advantage.</p>
-                        <div class="about-stats">
-                            <div class="stat-card">
-                                <div class="stat-number" data-count="50">0</div>
-                                <div class="stat-label">Projects Completed</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" data-count="11">0</div>
-                                <div class="stat-label">Service Domains</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" data-count="100">0</div>
-                                <div class="stat-label">Client Satisfaction</div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -1062,7 +1049,6 @@
                             <i class="fab fa-python"></i>
                         </div>
                         <h3>Python Development</h3>
-                        <!-- <p>Enterprise-grade Python applications, microservices architecture, and legacy system modernization.</p> -->
                         <p>Custom Python application development including web applications,
                             REST APIs, automation scripts, and scalable backend solutions
                             using modern frameworks and best practices.</p>
@@ -1267,7 +1253,6 @@
                         </div>
                         <div>
                             <h4>Phone Number</h4>
-                            <!-- <p><a href="mailto:tweetytech7@gmail.com">tweetytech7@gmail.com</a></p> -->
                             <p>+91 8088306299</p>
                         </div>
                     </div>
@@ -1300,37 +1285,7 @@
                             • HR & Staffing Partners</p>
                     </div>
                 </div>
-                <!-- <div class="contact-form fade-in">
-                    <div class="glass-card">
-                        <h3>Send us a Message</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" id="name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email *</label>
-                                <input type="email" id="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="tel" id="phone" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject *</label>
-                                <input type="text" id="subject" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">Message *</label>
-                                <textarea id="message" class="form-control" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary form-submit-btn">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                            <div id="formMessage" class="form-message"></div>
-                        </form>
-                    </div>
-                </div> -->
+               
             </div>
         </div>
     </section>
@@ -1397,10 +1352,7 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
-    <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button> -->
+
 
     <!-- JavaScript -->
     <script>
@@ -1489,128 +1441,9 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
 
-        // Contact Form Submission with EmailJS
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        
 
-            const formMessage = document.getElementById('formMessage');
-            const submitBtn = this.querySelector('.form-submit-btn');
-            const originalBtnText = submitBtn.innerHTML;
-
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Simple validation
-            if (!name || !email || !subject || !message) {
-                formMessage.textContent = 'Please fill in all required fields.';
-                formMessage.className = 'form-message error';
-                return;
-            }
-
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-
-            // Using mailto as a fallback (EmailJS would require additional setup)
-            // const mailtoLink = `mailto:tweetytech7@gmail.com?subject=${encodeURIComponent('Website Contact: ' + subject)}&body=${encodeURIComponent(
-            //     `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}\n\n---\nSent from TWEETY TECH website`
-            // )}`;
-
-            const mailtoLink = `mailto:shaikrafiq9052707297@gmail.com?subject=${encodeURIComponent('Website Contact: ' + subject)}&body=${encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}\n\n---\nSent from TWEETY TECH website`
-            )}`;
-
-            // Simulate API call delay
-            setTimeout(() => {
-                // In a real implementation, you would use EmailJS or another service
-                // For this demo, we'll simulate success and provide mailto option
-
-                // Show success message
-                formMessage.innerHTML = `
-                    <strong>Thank you for your message!</strong><br>
-                    We've received your inquiry and will respond within 24 hours.<br>
-                    <small>Alternatively, you can email us directly at <a href="mailto:tweetytech7@gmail.com">tweetytech7@gmail.com</a></small>
-                `;
-                formMessage.className = 'form-message success';
-
-                // Reset form
-                document.getElementById('contactForm').reset();
-
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-
-                // Optionally open mail client
-                // window.location.href = mailtoLink;
-            }, 1500);
-        });
-
-        // Theme Toggle Functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
-
-        // Check for saved theme preference or default to light
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // Set initial theme
-        if (currentTheme === 'dark') {
-            enableDarkTheme();
-        }
-
-        themeToggle.addEventListener('click', () => {
-            if (document.body.classList.contains('dark-theme')) {
-                enableLightTheme();
-            } else {
-                enableDarkTheme();
-            }
-        });
-
-        function enableDarkTheme() {
-            document.body.classList.add('dark-theme');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
-
-            // Update CSS variables for dark theme
-            document.documentElement.style.setProperty('--light-bg', '#0a0a0f');
-            document.documentElement.style.setProperty('--light-surface', '#13131f');
-            document.documentElement.style.setProperty('--light-card', '#1a1a2e');
-            document.documentElement.style.setProperty('--dark-text', '#f8f9fa');
-            document.documentElement.style.setProperty('--dark-text-secondary', '#adb5bd');
-            document.documentElement.style.setProperty('--gray-border', '#2d2d42');
-            document.documentElement.style.setProperty('--gray-light', '#13131f');
-            document.documentElement.style.setProperty('--glass-bg', 'rgba(19, 19, 31, 0.85)');
-            document.documentElement.style.setProperty('--glass-border', 'rgba(255, 255, 255, 0.08)');
-            document.documentElement.style.setProperty('--shadow-sm', '0 4px 12px rgba(0, 0, 0, 0.2)');
-            document.documentElement.style.setProperty('--shadow-md', '0 10px 30px rgba(0, 0, 0, 0.25)');
-            document.documentElement.style.setProperty('--shadow-lg', '0 20px 60px rgba(0, 0, 0, 0.3)');
-        }
-
-        function enableLightTheme() {
-            document.body.classList.remove('dark-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
-
-            // Reset to light theme CSS variables
-            document.documentElement.style.setProperty('--light-bg', '#ffffff');
-            document.documentElement.style.setProperty('--light-surface', '#f8fafc');
-            document.documentElement.style.setProperty('--light-card', '#ffffff');
-            document.documentElement.style.setProperty('--dark-text', '#1a202c');
-            document.documentElement.style.setProperty('--dark-text-secondary', '#4a5568');
-            document.documentElement.style.setProperty('--gray-border', '#e2e8f0');
-            document.documentElement.style.setProperty('--gray-light', '#f7fafc');
-            document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.85)');
-            document.documentElement.style.setProperty('--glass-border', 'rgba(0, 0, 0, 0.05)');
-            document.documentElement.style.setProperty('--shadow-sm', '0 4px 12px rgba(0, 0, 0, 0.05)');
-            document.documentElement.style.setProperty('--shadow-md', '0 10px 30px rgba(0, 0, 0, 0.08)');
-            document.documentElement.style.setProperty('--shadow-lg', '0 20px 60px rgba(0, 0, 0, 0.1)');
-        }
-
+        
         // Initialize on load
         document.addEventListener('DOMContentLoaded', function () {
             // Set current year in footer if needed

@@ -304,6 +304,12 @@
             font-size: 1.75rem;
             color: var(--dark-text);
         }
+        .logo img{
+            height: 100%;
+            width: 35%;
+            object-fit: cover;
+            object-position: center;
+        }
 
         .logo-icon {
             color: var(--primary);
@@ -311,9 +317,11 @@
         }
 
         .nav-links {
+            width: max-content;
             display: flex;
             gap: 2.5rem;
             align-items: center;
+            /* border: 2px solid red; */
         }
 
         .nav-link {
@@ -355,12 +363,14 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, var(--light-surface) 0%, white 100%);
+            /* border: 2px solid blue; */
         }
 
         .hero-content {
             max-width: 900px;
             position: relative;
             z-index: 2;
+            /* border: 2px solid red; */
         }
 
         .hero-subtitle {
@@ -901,7 +911,8 @@
         <div class="container header-container">
             <div class="logo">
                 <!-- <span class="logo-icon">🚀</span> -->
-                <span>TWEETY TECH</span>
+                <!-- <span>TWEETY TECH</span> -->
+                 <img src="./tweet_name_latest-removebg-preview.png" alt="">
             </div>
             <nav>
                 <ul class="nav-links">

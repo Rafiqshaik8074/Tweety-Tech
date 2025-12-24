@@ -66,6 +66,15 @@
         }
 
         body {
+            -webkit-user-select: none;
+            /* Chrome, Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE/Edge */
+            user-select: none;
+
+
             font-family: var(--font-primary);
             background-color: var(--light-bg);
             color: var(--dark-text);
@@ -997,10 +1006,10 @@
                                 <div class="stat-number" data-count="100">0</div>
                                 <div class="stat-label">Client Satisfaction</div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -1624,6 +1633,43 @@
                 });
             });
         });
+
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (
+                (e.ctrlKey && ["c", "v", "x", "u", "s", "a"].includes(e.key.toLowerCase())) ||
+                e.key === "F12"
+            ) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener("copy", function (e) {
+            e.preventDefault();
+        });
+
+        (function () {
+            const threshold = 160;
+            setInterval(() => {
+                if (
+                    window.outerWidth - window.innerWidth > threshold ||
+                    window.outerHeight - window.innerHeight > threshold
+                ) {
+                    document.body.style.filter = "blur(6px)";
+                } else {
+                    document.body.style.filter = "none";
+                }
+            }, 500);
+        })();
+
+
+
+
+
+
     </script>
 </body>
 

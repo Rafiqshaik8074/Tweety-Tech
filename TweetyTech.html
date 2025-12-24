@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWEETY TECH PVT LTD | Next-Gen IT Services & Staffing</title>
+    <meta name="description" content="Premium IT services and staffing solutions powered by AI innovation. Expertise in Artificial Intelligence, Machine Learning, Data Science, Cybersecurity, and more.">
+    <meta name="keywords" content="IT Services, Staffing, AI, Machine Learning, Data Science, Cybersecurity, Salesforce, Java, Pega, HR Operations">
+    <meta name="author" content="TWEETY TECH PVT LTD">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"> -->
+    <style>
+        /* CSS Variables - Light Theme Design System */
+        :root {
+            --primary: #0066ff;
+            --primary-light: #4d94ff;
+            --primary-dark: #0052d4;
+            --secondary: #7928ca;
+            --secondary-light: #9a52ff;
+            --light-bg: #ffffff;
+            --light-surface: #f8fafc;
+            --light-card: #ffffff;
+            --dark-text: #1a202c;
+            --dark-text-secondary: #4a5568;
+            --gray-border: #e2e8f0;
+            --gray-light: #f7fafc;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #ff6b6b;
+            --accent-blue: #e3f2fd;
+            --accent-purple: #f3e8ff;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --border-radius: 16px;
+            --border-radius-sm: 10px;
+            --container-width: 1280px;
+            --header-height: 80px;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(121, 40, 202, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 184, 148, 0.02) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--dark-text);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            color: var(--dark-text);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--dark-text-secondary);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--dark-text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            /* border: 2px solid red; */
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            /* text-align: center;
+            border: 2px solid blue; */
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+            /* border: 2px solid red; */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mb-3 { margin-bottom: 3rem; }
+        .mb-4 { margin-bottom: 4rem; }
+        .mt-1 { margin-top: 1rem; }
+        .mt-2 { margin-top: 2rem; }
+        .mt-3 { margin-top: 3rem; }
+        .mt-4 { margin-top: 4rem; }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.25rem;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: none;
+            font-size: 1rem;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--gray-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.75rem;
+            color: var(--dark-text);
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--dark-text);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: calc(var(--header-height) + 4rem);
+            padding-bottom: 8rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--light-surface) 0%, white 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            color: var(--dark-text-secondary);
+        }
+
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-light), transparent);
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            background: radial-gradient(circle, var(--secondary-light), transparent);
+            animation-delay: -5s;
+            animation-direction: reverse;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -50px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-surface);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-border);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--dark-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--light-surface);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--gray-border);
+            transition: all var(--transition-fast);
+        }
+
+        .service-card:hover {
+            /* transform: translateY(-5px); */
+            /* box-shadow: var(--shadow-lg); */
+            /* border: 2px solid red; */
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            background: var(--accent-blue);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .service-card-content {
+            padding: 2rem;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            border: 1px solid var(--gray-border);
+            transition: all var(--transition-fast);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            background: var(--accent-blue);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-surface);
+        }
+
+        .contact-container {
+            display: grid;
+            /* grid-template-columns: 1fr 1fr; */
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            /* border: 2px solid blue; */
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            /* border: 2px solid red; */
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-border);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-text);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: white;
+            border: 1px solid var(--gray-border);
+            border-radius: var(--border-radius-sm);
+            color: var(--dark-text);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid var(--danger);
+            color: var(--danger);
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            padding: 4rem 0 2rem;
+            color: white;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: white;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.25rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { padding: 0 1rem; }
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--glass-bg);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-fast);
+                border-bottom: 1px solid var(--gray-border);
+                box-shadow: var(--shadow-lg);
+            }
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .mobile-menu-btn { display: block; }
+            .btn-group { justify-content: center; }
+            .about-stats { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: 1fr; }
+            .section-padding { padding: 4rem 0; }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .btn-group { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            .about-stats { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .glass-card { padding: 1.5rem; }
+            .feature-card { padding: 1.5rem; }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+            transition: all var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- <span class="logo-icon">🚀</span> -->
+                <span>TWEETY TECH</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section-padding">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Next-Gen Technology Solutions & Elite Talent Staffing</h1>
+                <p class="hero-subtitle">TWEETY TECH delivers cutting-edge IT services, AI-powered solutions, and comprehensive staffing services to enterprises worldwide. We bridge innovation with execution.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-search"></i> Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>About TWEETY TECH</h2>
+                <p class="section-subtitle">We are a forward-thinking technology partner focused on delivering innovative solutions that drive business transformation and growth.</p>
+            </div>
+            <div class="about-content fade-in">
+                <div>
+                    <h3>Vision & Mission</h3>
+                    <p>At TWEETY TECH, we envision a future where technology seamlessly integrates with business operations to create unparalleled efficiency and innovation. Our mission is to provide premium IT services and staffing solutions that empower organizations to thrive in the digital age.</p>
+                    <p>Founded and led by <strong class="gradient-text">Chimata Gopi</strong>, we combine deep technical expertise with strategic business insight to deliver measurable results for our clients across industries.</p>
+                </div>
+                <div>
+                    <div class="glass-card">
+                        <h3>Our Expertise</h3>
+                        <p>With a focus on emerging technologies and a commitment to excellence, we serve as a strategic partner for businesses seeking to leverage AI, cybersecurity, data science, and specialized staffing to gain competitive advantage.</p>
+                        <!-- <div class="about-stats">
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="50">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="11">0</div>
+                                <div class="stat-label">Service Domains</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="100">0</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Our Services</h2>
+                <p class="section-subtitle">Comprehensive technology solutions and staffing services designed to meet the evolving needs of modern businesses.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Advanced AI solutions including predictive analytics, natural language processing, and intelligent automation to transform business operations.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Custom ML models and algorithms for data-driven decision making, pattern recognition, and predictive modeling.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Science</h3>
+                        <p>End-to-end data science solutions: data mining, visualization, statistical analysis, and actionable insights generation.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python Development</h3>
+                        <p>Enterprise-grade Python applications, microservices architecture, and legacy system modernization.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cyber Security</h3>
+                        <p>Comprehensive security assessments, threat detection, vulnerability management, and compliance solutions.</p>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Java Development</h3>
+                        <p>Enterprise-grade Java applications, microservices architecture, and legacy system modernization.</p>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Pega</h3>
+                        <p>Pega platform implementation, BPM solutions, and case management for optimized business processes.</p>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fab fa-salesforce"></i>
+                        </div>
+                        <h3>Salesforce</h3>
+                        <p>Salesforce CRM implementation, customization, integration, and ongoing support services.</p>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Payroll Services</h3>
+                        <p>Comprehensive payroll management, tax compliance, and employee compensation solutions.</p>
+                    </div>
+                </div>
+                <!-- Service 9 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3>IT Staffing</h3>
+                        <p>Specialized recruitment of IT professionals: developers, engineers, architects, and technical leads.</p>
+                    </div>
+                </div>
+                <!-- Service 10 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Non-IT Staffing</h3>
+                        <p>Staffing solutions for administrative, finance, marketing, and operational roles across industries.</p>
+                    </div>
+                </div>
+                <!-- Service 11 -->
+                <div class="service-card fade-in">
+                    <div class="service-card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>HR End-to-End Operations</h3>
+                        <p>Complete HR management including recruitment, onboarding, performance management, and compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Why Choose TWEETY TECH</h2>
+                <p class="section-subtitle">Our commitment to excellence, innovation, and client success sets us apart as a premier technology partner.</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>Deep domain knowledge across emerging technologies with certified professionals and industry veterans leading every project.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <p>Consistent delivery of high-quality solutions on time and within budget, with transparent communication at every stage.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Forward-thinking approach leveraging cutting-edge technologies and methodologies to solve complex business challenges.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Talent Network</h3>
+                    <p>Access to a curated network of pre-vetted technology professionals and subject matter experts across domains.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>End-to-End Delivery</h3>
+                    <p>Comprehensive service delivery from strategy and planning to implementation, maintenance, and support.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Approach</h3>
+                    <p>We work as an extension of your team, invested in your long-term success with flexible engagement models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Get In Touch</h2>
+                <p class="section-subtitle">Ready to transform your business with cutting-edge technology solutions? Contact us today.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:tweetytech7@gmail.com">tweetytech7@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Ground floor, Unit 101, Oxford Towers,<br>
+                            New 139/88, HAL 2nd Stage,<br>
+                            Bangalore North – 560008, Karnataka, India</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h4>Leadership</h4>
+                            <p><strong>Managing Director:</strong> Chimata Gopi</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h4>Industries We Serve</h4>
+                        <p>• Enterprise Corporations<br>
+                        • Startups & Scale-ups<br>
+                        • SMEs<br>
+                        • Technology Firms<br>
+                        • HR & Staffing Partners</p>
+                    </div>
+                </div>
+                <!-- <div class="contact-form fade-in">
+                    <div class="glass-card">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                            <div id="formMessage" class="form-message"></div>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>TWEETY TECH</h4>
+                    <p>Premium IT services and staffing solutions powered by innovation and expertise.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Artificial Intelligence</a></li>
+                        <li><a href="#services">Machine Learning</a></li>
+                        <li><a href="#services">Data Science</a></li>
+                        <li><a href="#services">Cyber Security</a></li>
+                        <li><a href="#services">IT Staffing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> tweetytech7@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                        <li><i class="fas fa-user-tie"></i> Chimata Gopi, Managing Director</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TWEETY TECH PVT LTD. All rights reserved.</p>
+                <p>Ground floor, Unit 101, Oxford Towers, HAL 2nd Stage, Bangalore – 560008</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button> -->
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Animated counters
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.getAttribute('data-count') === '100' ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (element.getAttribute('data-count') === '100' ? '%' : '+');
+                }
+            }, 16);
+        }
+
+        // Scroll animations
+        function checkScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                    
+                    // Animate counters when they come into view
+                    if (element.querySelector('.stat-number')) {
+                        const statNumbers = element.querySelectorAll('.stat-number');
+                        statNumbers.forEach(stat => {
+                            const target = parseInt(stat.getAttribute('data-count'));
+                            if (!stat.hasAttribute('data-animated')) {
+                                animateCounter(stat, target);
+                                stat.setAttribute('data-animated', 'true');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Contact Form Submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = this.querySelector('.form-submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Using mailto as a fallback (EmailJS would require additional setup)
+            // const mailtoLink = `mailto:tweetytech7@gmail.com?subject=${encodeURIComponent('Website Contact: ' + subject)}&body=${encodeURIComponent(
+            //     `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}\n\n---\nSent from TWEETY TECH website`
+            // )}`;
+
+             const mailtoLink = `mailto:shaikrafiq9052707297@gmail.com?subject=${encodeURIComponent('Website Contact: ' + subject)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}\n\n---\nSent from TWEETY TECH website`
+            )}`;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // In a real implementation, you would use EmailJS or another service
+                // For this demo, we'll simulate success and provide mailto option
+                
+                // Show success message
+                formMessage.innerHTML = `
+                    <strong>Thank you for your message!</strong><br>
+                    We've received your inquiry and will respond within 24 hours.<br>
+                    <small>Alternatively, you can email us directly at <a href="mailto:tweetytech7@gmail.com">tweetytech7@gmail.com</a></small>
+                `;
+                formMessage.className = 'form-message success';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Optionally open mail client
+                // window.location.href = mailtoLink;
+            }, 1500);
+        });
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Set initial theme
+        if (currentTheme === 'dark') {
+            enableDarkTheme();
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('dark-theme')) {
+                enableLightTheme();
+            } else {
+                enableDarkTheme();
+            }
+        });
+        
+        function enableDarkTheme() {
+            document.body.classList.add('dark-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+            
+            // Update CSS variables for dark theme
+            document.documentElement.style.setProperty('--light-bg', '#0a0a0f');
+            document.documentElement.style.setProperty('--light-surface', '#13131f');
+            document.documentElement.style.setProperty('--light-card', '#1a1a2e');
+            document.documentElement.style.setProperty('--dark-text', '#f8f9fa');
+            document.documentElement.style.setProperty('--dark-text-secondary', '#adb5bd');
+            document.documentElement.style.setProperty('--gray-border', '#2d2d42');
+            document.documentElement.style.setProperty('--gray-light', '#13131f');
+            document.documentElement.style.setProperty('--glass-bg', 'rgba(19, 19, 31, 0.85)');
+            document.documentElement.style.setProperty('--glass-border', 'rgba(255, 255, 255, 0.08)');
+            document.documentElement.style.setProperty('--shadow-sm', '0 4px 12px rgba(0, 0, 0, 0.2)');
+            document.documentElement.style.setProperty('--shadow-md', '0 10px 30px rgba(0, 0, 0, 0.25)');
+            document.documentElement.style.setProperty('--shadow-lg', '0 20px 60px rgba(0, 0, 0, 0.3)');
+        }
+        
+        function enableLightTheme() {
+            document.body.classList.remove('dark-theme');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+            
+            // Reset to light theme CSS variables
+            document.documentElement.style.setProperty('--light-bg', '#ffffff');
+            document.documentElement.style.setProperty('--light-surface', '#f8fafc');
+            document.documentElement.style.setProperty('--light-card', '#ffffff');
+            document.documentElement.style.setProperty('--dark-text', '#1a202c');
+            document.documentElement.style.setProperty('--dark-text-secondary', '#4a5568');
+            document.documentElement.style.setProperty('--gray-border', '#e2e8f0');
+            document.documentElement.style.setProperty('--gray-light', '#f7fafc');
+            document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.85)');
+            document.documentElement.style.setProperty('--glass-border', 'rgba(0, 0, 0, 0.05)');
+            document.documentElement.style.setProperty('--shadow-sm', '0 4px 12px rgba(0, 0, 0, 0.05)');
+            document.documentElement.style.setProperty('--shadow-md', '0 10px 30px rgba(0, 0, 0, 0.08)');
+            document.documentElement.style.setProperty('--shadow-lg', '0 20px 60px rgba(0, 0, 0, 0.1)');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer if needed
+            document.querySelector('.footer-bottom p').innerHTML = document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
